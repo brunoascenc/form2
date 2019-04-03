@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="#" onsubmit="return validar()">
+        <label>Nome</label><br>
+        <input type="text" id="name" name="nome">
+        <label>Email</label><br>
+        <input type="email" id="email" name="email">
+        <label>Senha</label>
+        <input type="password" id="senha" name="senha">
+        <input type="submit" name="submit" value="Insert now">
+        <div id="resultado"></div>
+    </form>
+
+    <script>
+
+
+        function validar() {
+            const inputEmail = document.getElementById('email').value
+            const inputNome = document.getElementById('name').value
+            const inputSenha = document.getElementById('senha').value
+            if (inputEmail == "" || inputNome == "" || inputSenha == "") {
+                document.getElementById('resultado').innerHTML = "Preencha todos os campos"
+                return false
+
+            } else if (inputNome.length < 3) {
+                document.getElementById('resultado').innerHTML = "Escreve o nome direito"
+                return false
+
+            } else if (inputSenha.length < 3) {
+                document.getElementById('resultado').innerHTML = "Preencha a senha corretamente"
+                return false
+
+            } else {
+                return true
+            }
+        }
+    </script>
+</body>
+
+</html>
